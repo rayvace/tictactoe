@@ -144,6 +144,7 @@ span[id*='cell'] {
 .modal-header {
   border-bottom: #eeeeee solid 1px;
   height: 60px;
+  text-align: center;
 }
 .modal-header h2 {
   font-size: 20px;
@@ -195,4 +196,7 @@ span[id*='cell'] {
 }
 .btn-close:hover {
   color: #919191;
+}
+.btn-center {
+  margin: 0 auto;
 }

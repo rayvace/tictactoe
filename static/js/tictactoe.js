@@ -19,6 +19,8 @@
       this.mark = 'O';
       this.computer = 'X';
       this.order = '1';
+
+      this.listenTo(bus, "setupView:closeModal", this.closeModal);
     },
 
     setMarker: function(e){
@@ -47,22 +49,36 @@
       this.initGame();
     },
 
+    //
     // Set up game config like order (i.e., computer plays first) 
     // and marker.
+    //
     initGame: function(){
       var self = this;
-      var actor = 'Human';
+      var actor = 'You have';
 
-      if (self.order != '1'){ actor = 'Computer'; }
+      if (self.order != '1'){ actor = 'Computer has'; }
       
       $.post('/init', {order: self.order, mark: self.mark}, function(data){
         if(data.success){
-          $('.modal-header > h1').text(actor+' prepare to play. Close popup to start.');
+          $('.modal-header > h1').text(actor+' first move. Good luck!');
           $('.modal-game-order').hide();
-          if (actor == 'Computer') {bus.trigger('appView:computerMove');}
+          
+          if (self.order != '1') {bus.trigger('appView:computerMove');}
+          bus.trigger('setupView:closeModal');
         }
       });
+    },
+
+    //
+    // Automatically close start-up modal
+    //
+    closeModal: function(){
+      setTimeout(function (){
+        window.location.hash = '';
+      }, 1500);
     }
+
   });
 
   /**
@@ -103,7 +119,6 @@
     templateMarker: _.template($('#template-step1').html()),
 
     initialize: function(){
-      this.last_play = null;
       this.total_moves = 0;
       this.listenTo(bus, "appView:postMove", function(id){
         this.setMove(id);
@@ -114,8 +129,9 @@
 
       //lives outside of tictactoe element
       $('#restart').bind('click', this.restartGame);
-      window.location.hash = 'modal-one';
+
       this.refreshModal();
+      window.location.hash = 'modal-one';
     },
 
     //Transitions
