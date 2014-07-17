@@ -27,7 +27,7 @@ if __name__ == "__main__":
 	rules.next_play = next_play
 	rules.set_board(board)
 
-	player.set_mark(ai_mark)
+	player.set_mark(ai_mark) #computer's mark (i.e., X)
 	player.set_board(board)
 
 	end_game = False

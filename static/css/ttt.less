@@ -1,0 +1,267 @@
+body{
+    background-color: rgb(132, 255, 255);
+    margin: 0px;
+}
+//
+// Variables
+// ----------------------
+
+@gray: #333;
+@gray-light: #aaa;
+@gray-lighter: #eee;
+@space: 40px;
+@blue: #428bca;
+@blue-dark: darken(@blue, 5%);
+@font-family: RobotoDraft, Helvetica, Arial, sans-serif;
+
+// Mixin for transition/transform
+//-------------------------------
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y); // IE9+
+          transform: translate(@x, @y);
+}
+.transition(@transition) {
+  -webkit-transition: @transition;
+          transition: @transition;
+}
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+     -moz-transition: -moz-transform @transition;
+       -o-transition: -o-transform @transition;
+          transition: transform @transition;
+}
+
+.box-sizing (@type: border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing:    @type;
+    box-sizing:         @type;
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius:    @radius;
+    border-radius:         @radius;
+
+    -moz-background-clip:    padding;
+    -webkit-background-clip: padding-box;
+    background-clip:         padding-box;
+}
+//Overrides & Helpers
+//-------------------------------
+h1{
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+.hidden{
+  display:none;
+}
+
+.center{
+  text-align:center;
+}
+
+.strong{
+  font-weight: 800;
+  font-size: 42px;
+}
+
+// Banner
+//-------------------------------
+.banner{
+  background-color: rgb(57,172,230);
+  padding: 16px;
+  height: 40px;
+}
+
+// Main Page Style
+//-------------------------------
+#teespring{
+  top: 42px;
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  display: bloxk;
+  position: absolute; 
+  left: 0px;
+  right: 0px;
+  background: url(../img/teespring.png);
+  box-shadow: rgba(0, 0, 0, 0.156863) 0px 2px 10px 0px;
+  .border-radius(30px);
+}
+
+#title{
+    margin: 25px auto;
+    font-size: 38px;
+    font-family: @font-family;
+    color: rgb(97, 97, 97);
+    text-align: center;
+    display: block;
+    width: 380px;
+}
+
+#tictactoe{
+    margin: 50px auto;
+    width: 380px;
+    position: relative;
+    display: block;
+}
+
+#grid{
+    min-height: 500px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+span[id*='cell']{
+    display: block;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(57,172,230);
+    font-family: @font-family;
+    font-size: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+.row-0{
+    top: 0px;
+}
+
+.row-1{
+    top: 130px;
+}
+
+.row-2{
+    top: 260px;
+}
+
+.col-0{
+    left: 0px;
+}
+
+.col-1{
+    left: 130px;
+}
+
+.col-2{
+    left: 260px;
+}
+
+//
+// Modal
+// ----------------------
+
+.modal{
+   
+  // This is modal bg
+  &:before{
+    content: ""; 
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0; 
+    z-index: 10;
+  }
+  
+  &:target{
+     
+    // Active animate in modal
+    &:before{
+      display: block;
+    }  
+    .modal-dialog{
+      .translate(0, 0); 
+      top: 20px; 
+      font-family: @font-family; 
+    }
+     
+  }
+  
+}
+
+// Modal Dialog
+//
+// Reference: http://codepen.io/maccadb7/pen/nbHEg
+// ----------------------
+
+.modal-dialog{
+  background: #fefefe;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+  margin-left: -345px;
+  position: fixed; 
+  left: 50%; 
+  top: -100%;  
+  z-index: 11; 
+  height: 180px;
+  width: 50%;
+  min-width: 430px;
+  .border-radius(3px);
+  .translate(0, -500%);
+  .transition-transform(~"0.3s ease-out");
+}
+
+.modal-body{
+  padding: @space/2;
+}
+
+.modal-header,
+.modal-footer{
+  padding: @space/4 @space/2;
+}
+
+.modal-header{
+  border-bottom: @gray-lighter solid 1px;
+  height: 60px;
+
+  h2{
+    font-size: 20px;
+  }
+  
+}
+.modal-game-order, 
+.modal-marker-pref{
+  width: 390px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 50px;
+}
+
+// Button
+//
+// ----------------------
+.btn{
+  color: rgb(102, 102, 102);
+  display: block;
+  vertical-align:middle;
+  height: 40px;
+  width: 180px;
+  padding: 12px 5px 5px 0px;
+  text-align: center;
+  background: #fafafa;
+  box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+  font-size: 15px;
+  font-family: @font-family;
+  text-transform: uppercase;
+  text-decoration: none;
+  .box-sizing(border-box);
+  .border-radius(3px);
+}
+.btn-choice{
+  float:left;
+  &:first-child{
+    margin-right:10px;
+  }
+}
+.btn-close{
+  color: @gray-light;
+  font-size: 30px;
+  text-decoration: none;
+  position: absolute; right: 5px; top: 0;
+  
+  &:hover{
+     color: darken(@gray-light, 10%);
+  }
+}

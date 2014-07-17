@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tic-tac-toe</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" href="../static/css/ttt.css" type="text/css" />
+</head>
+<body touch-action="auto">
+	<!-- Banner -->
+	<div class="banner">
+		<a id="restart" href="#modal-one" class="btn btn-big">Start New Match</a>
+	</div>
+	<div id="teespring"></div>
+	
+	<!-- Main -->
+	<div id="tictactoe">
+		<span id="title">Tic-tac-toe</span>
+		<div id="grid"></div>
+	</div>
+	
+	<!-- Modal -->
+	<div class="modal" id="modal-one" aria-hidden="true">
+	  <div class="modal-dialog">
+	    
+	  </div>
+	</div>
+	<!-- /Modal -->
+
+	<!-- End State -->
+	<div class="modal" id="modal-two" aria-hidden="true">
+		<div class="modal-dialog">
+			<h1 id="announce" class="center strong"></h1>
+			<a id="restart" href="#modal-one" class="btn btn-big">Start New Match</a>
+		</div>
+	<div>
+
+	<!-- step1 -->
+	<script type="text/template" id="template-step1">
+	<div class="modal-header">
+    	<h1 id="marker-q">Do you want to play as 'X' or 'O'?</h1>
+      	<a href="#" class="btn-close" aria-hidden="true">×</a>
+    	</div>
+	    <div class="modal-body">
+	    	<div class="modal-marker-pref">
+		      <a href="#" id="marker-x" class="btn btn-choice">X</a>
+		      <a href="#" id="marker-o" class="btn btn-choice">O</a>
+		    </div>
+	    </div>
+	</script>
+
+	<!-- step2 -->
+	<script type="text/template" id="template-step2">
+		<div class="modal-header">
+			<h1 id="order-q" class="hidden">Do you want to play the first move?</h1>
+			<a href="#" class="btn-close" aria-hidden="true">×</a>
+		</div>
+	    <div class="modal-body">
+		<div class="modal-game-order hidden">
+	      <a href="#" id="first-move" class="btn btn-choice">Yes</a>
+	      <a href="#" id="second-move" class="btn btn-choice">No</a>
+	    </div>
+	    </div>
+    </script>
+
+
+    <script type="text/template" id="template-cell">
+		<span id="cell" class="cell<%=id%> col-<%=y%> row-<%=x%>">
+		</span>
+	</script>
+
+	<script type="text/javascript" src="../static/js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/libs/underscore.min.js"></script>
+    <script type="text/javascript" src="../static/js/libs/backbone.min.js"></script>
+   	<script type="text/javascript" src="../static/js/tictactoe.js"></script>
+<body>
+</html>
