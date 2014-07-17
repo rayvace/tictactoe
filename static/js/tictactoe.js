@@ -137,6 +137,7 @@
     //Transitions
     refreshModal: function(){
       this.modalEl.html(this.templateMarker());
+      $('#restart-end').bind('click', this.restartGame);
     },
 
     render: function(){
