@@ -22,13 +22,9 @@ $ cd tictactoe
 Next, install virtualenv
 ```
 $ pip install virtualenv
-```
 
-```
 $ virtualenv venv
-```
 
-```
 $ source venv/bin/activate
 ```
 
