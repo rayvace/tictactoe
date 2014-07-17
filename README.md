@@ -1,7 +1,7 @@
 Tic Tac Toe
 =========
 
-A web and command line app for playing Tic Tac Toe against a computer. The computer can only win or tie. This project is built in python and javascript. The computer plays a perfect game by following the Tic Tac Toe strategy described in (Wikipedia)[http://en.wikipedia.org/wiki/Tic-tac-toe]. This program uses rules rather than the (minmax)[http://chet-weger.herokuapp.com/play_ttt/] algorithm to determine the best move.
+A web and command line app for playing Tic Tac Toe against a computer. The computer can only win or tie. This project is built in python and javascript. The computer plays a perfect game by following the Tic Tac Toe strategy described in [Wikipedia](http://en.wikipedia.org/wiki/Tic-tac-toe). This program uses rules rather than the [minmax](http://chet-weger.herokuapp.com/play_ttt/) algorithm to determine the best move.
 
 Project Structure
 =========
