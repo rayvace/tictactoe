@@ -16,20 +16,17 @@ if __name__ == "__main__":
 	while opponent not in ['X', 'O']:
 		opponent = raw_input("Invalid: Pick either X or O: ")
 
-	rules = Rules()
 	board = Board()
-	player = ArtificialIntelligence()
+	rules = Rules(board)
+	player = ArtificialIntelligence(board)
 
 	ai_mark = 'O' if opponent == 'X' else 'X'
 	next_play = opponent if starter == '1' else ai_mark
 	
 	#initialize
 	rules.next_play = next_play
-	rules.set_board(board)
-
 	player.set_mark(ai_mark) #computer's mark (i.e., X)
-	player.set_board(board)
-
+	
 	end_game = False
 	while not end_game:
 		print_board(board.grid)

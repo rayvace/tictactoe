@@ -1,11 +1,11 @@
 Tic Tac Toe
 =========
 
-An web and command line app for playing Tic Tac Toe against a computer. The computer can only win or tie. This project is built in python and javascript. The computer plays a perfect game by following the Tic Tac Toe strategy described in (Wikipedia)[http://en.wikipedia.org/wiki/Tic-tac-toe]. This program uses rules rather than the (minmax)[http://chet-weger.herokuapp.com/play_ttt/] algorithm to determine the best move.
+A web and command line app for playing Tic Tac Toe against a computer. The computer can only win or tie. This project is built in python and javascript. The computer plays a perfect game by following the Tic Tac Toe strategy described in [Wikipedia](http://en.wikipedia.org/wiki/Tic-tac-toe). This program uses rules rather than the [minmax](http://chet-weger.herokuapp.com/play_ttt/) algorithm to determine the best move.
 
 Project Structure
 =========
-This project uses Flask as a lightweight web framework for receiving and respodning to API requests. The front-end uses Backbone to keep the javascript organized and LESS. You'll see that what little data there is, is persisted using SimpleCache (not meant to be used production). 
+This project uses Flask as a lightweight web framework for receiving and respodning to API requests. The front-end uses Backbone to keep the javascript organized and LESS. You'll see that what little data there is, is persisted using SimpleCache (not meant to be used in production). 
 
 To install this project, run the following from your terminal:
 
