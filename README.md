@@ -5,7 +5,7 @@ A web and command line app for playing Tic Tac Toe against a computer. The compu
 
 Project Structure
 =========
-This project uses Flask as a lightweight web framework for receiving and respodning to API requests. The front-end uses Backbone to keep the javascript organized and LESS. You'll see that what little data there is, is persisted using SimpleCache (not meant to be used production). 
+This project uses Flask as a lightweight web framework for receiving and respodning to API requests. The front-end uses Backbone to keep the javascript organized and LESS. You'll see that what little data there is, is persisted using SimpleCache (not meant to be used in production). 
 
 To install this project, run the following from your terminal:
 
