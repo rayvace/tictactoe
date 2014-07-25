@@ -9,10 +9,8 @@ class TestAI(unittest.TestCase):
 
     def setUp(self):
         self.board = Board()
-        self.rules = Rules()
-        self.player = ArtificialIntelligence()
-
-        self.player.set_board(self.board)
+        self.rules = Rules(self.board)
+        self.player = ArtificialIntelligence(self.board)
 
     def test_next_winning_move(self):
         """

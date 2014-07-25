@@ -132,14 +132,11 @@ def tictactoe():
     session['key'] = key
 
     board = Board()
-    rules = Rules()
-    player = ArtificialIntelligence()
+    rules = Rules(board)
+    player = ArtificialIntelligence(board)
 
     #initialize
     rules.next_play = 'O'
-    rules.set_board(board)
-    player.set_board(board)
-
     state = {
         'board': board,
         'rules': rules,

@@ -36,11 +36,14 @@ class Rules(object):
         1: 'O'
     }
 
-    def __init__(self):
+    def __init__(self, board):
         """
         initialize next play
         """
-        self.board = None
+        if not board:
+            raise ValueError
+            
+        self.board = board
         self.next_play = self.DEFAULT_START
         self.remaining_moves = self.TOTAL_MOVES
 

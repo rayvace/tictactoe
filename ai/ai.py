@@ -21,11 +21,14 @@ class ArtificialIntelligence(object):
     DEFAULT_OPPONENT_MARK = 'O'
     MARK_OPTIONS = ['X', 'O']
 
-    def __init__(self):
+    def __init__(self, board):
+        if not board:
+            raise ValueError
+            
+        self.board = board
         self.mark = self.DEFAULT_MARK
         self.opponent_mark = self.DEFAULT_OPPONENT_MARK
         self.position = None
-        self.board = None
         self._clear_cache()
 
     def _get_opposite_corner(self, last_play):

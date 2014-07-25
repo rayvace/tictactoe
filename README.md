@@ -56,3 +56,10 @@ If you're a fan of the terminal, you can also play from the command line by runn
 ```
 $ python main.py
 ```
+
+Running Python Unittest
+=======================
+You can run unit tests for this project by running the following from the directory above tictactoe:
+
+```
+python -m unittest tictactoe.rules.test

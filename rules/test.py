@@ -6,10 +6,8 @@ import unittest
 class TestRules(unittest.TestCase):
 
     def setUp(self):
-        self.rule = Rules()
         self.board = Board()
-
-        self.rule.set_board(self.board)
+        self.rule = Rules(self.board)
 
     def test_next_play(self):
         self.assertTrue(True)

@@ -175,15 +175,18 @@
       var self = this;
 
       $.get('/play', function(data){
-        self.$el.find('.cell'+data.position).text(self.gameInit.computer);
-        this.total_moves = ++this.total_moves;
+        setTimeout(function() {
+          self.$el.find('.cell'+data.position).text(self.gameInit.computer);
+          this.total_moves = ++this.total_moves;
 
-        // Break out if we've reached an end game (win or draw)
-        if (data.result){
-          self.announceEl.text(data.result);
-          window.location.hash = 'modal-two';
-          bus.trigger('appView:endGame');
-        }
+          // Break out if we've reached an end game (win or draw)
+          if (data.result){
+            self.announceEl.text(data.result);
+            window.location.hash = 'modal-two';
+            bus.trigger('appView:endGame');
+          }
+        }, 500);
+        
       });
     },
 
